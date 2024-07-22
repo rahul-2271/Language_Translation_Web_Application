@@ -10,7 +10,6 @@ const defaultLanguages = {
     to: "ur-PK"
 };
 
-// Populate the select options with countries
 selectTags.forEach((tag, index) => {
     for (const countryCode in countries) {
         const selected = (index === 0 && countryCode === defaultLanguages.from) || (index === 1 && countryCode === defaultLanguages.to) ? "selected" : "";
@@ -18,13 +17,11 @@ selectTags.forEach((tag, index) => {
     }
 });
 
-// Exchange languages and text between the two text areas
 exchangeButton.addEventListener("click", () => {
     [fromTextArea.value, toTextArea.value] = [toTextArea.value, fromTextArea.value];
     [selectTags[0].value, selectTags[1].value] = [selectTags[1].value, selectTags[0].value];
 });
 
-// Translate text from one language to another
 translateButton.addEventListener("click", () => {
     const textToTranslate = fromTextArea.value;
     if (!textToTranslate) return;
@@ -46,7 +43,6 @@ translateButton.addEventListener("click", () => {
         });
 });
 
-// Copy text to clipboard or speak text
 icons.forEach(icon => {
     icon.addEventListener("click", ({ target }) => {
         const isFromText = target.id === "from";
