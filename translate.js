@@ -7,7 +7,7 @@ const icons = document.querySelectorAll(".row i");
 
 const defaultLanguages = {
     from: "en-GB",
-    to: "ur-PK"
+    to: "fr-FR"
 };
 
 selectTags.forEach((tag, index) => {
